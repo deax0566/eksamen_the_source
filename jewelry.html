@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +8,62 @@
     <link rel="stylesheet" href="">
 </head>
 
+
+
+
 <body>
 
-<!--
-Hvis man skal skal have data ind fra pods, laver man en template hvori man laver plads til, at de forskellige informationer kan indsættes (via JavaScript)
-  -->
-   <template>
-        <article class="smykker">
+    <template>
+        <article class="smykker_template">
             <img class="billede" src="">
             <h2 class="navn"></h2>
             <p class="pris"></p>
         </article>
     </template>
 
-<!--
-   For at hente alt data ind, som er indsat på en side i wordpress, laves en section. Med JS vil man hente dataen fra wp og indsætte den i sektionen '#oversigt'.
-   -->
     <main>
         <h1>Argentum collection</h1>
-        <section id="oversigt"></section>
+        <section id="jewelry_section"></section>
     </main>
 
 
+
     <script>
-        // Loader indhold
         document.addEventListener("DOMContentLoaded", start);
 
-        //
-        const url = "http://cilleabra.dk/kea/2_semester/tema_9/ihs/wordpress/wp-json/wp/v2/pages/30";
+
+
+        // Variabel url er linket til siden.
+        const url = "http://deacosmus.dk/kea/10_eksamen/hjemmeside/wordpress/wp-json/wp/v2/smykker?per_page=100";
+
+        // Variablen skabelon, er templatens indhold.
+        const skabelon = document.querySelector("template").content;
+
+        // Variablen smykkeListe, er den section hvor indholdet fra pods skal indsættes i.
+        const smykkeListe = document.querySelector("jewelry_section");
+
 
 
         async function start() {
+            console.log("start");
             const hentUrl = await fetch(url);
             indhold = await hentUrl.json();
             visIndhold();
+
         }
 
         function visIndhold() {
-            console.log(visIndhold)
-            document.querySelector("#generelt_oversigt").innerHTML = indhold.content.rendered;
+            console.log("visIndhold");
 
+            indhold.forEach(smykke => {
+                const klon = skabelon.cloneNode(true);
+                klon.querySelector(".billede").src = smykke.billede.guid;
+                klon.querySelector(".navn").textContent = smykke.navn;
+                klon.querySelector(".pris").textContent = smykke.pris;
+
+                jewelry_section.appendChild(klon);
+            })
         }
     </script>
 
-
-</body>
-</html>
+</body></html>

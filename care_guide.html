@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+
+
+
+<body>
+
+    <main>
+        <h1>Care Guide</h1>
+        <section id="care_guide_section"></section>
+    </main>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        const url = "http://deacosmus.dk/kea/10_eksamen/hjemmeside/wordpress/wp-json/wp/v2/pages/18";
+
+        async function start() {
+            const hentUrl = await fetch(url);
+            indhold = await hentUrl.json();
+            visIndhold();
+        }
+
+        function visIndhold() {
+            console.log("Funktionen visIndhold fungerer :)");
+
+            document.querySelector("#care_guide_section").innerHTML = indhold.content.rendered;
+        }
+    </script>
+
+</body></html>
