@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,43 @@
 </head>
 
 <body>
-<main>
 
-</main>
-
-
-
-
+    <!-- Her skal indholdet sættes ind -->
+    <main>
+        <section id="forside_section"></section>
+    </main>
 
 
+    <script>
+        // Loader side
+        document.addEventListener("DOMContentLoaded", start);
+
+        // Vi laver en konstant = url
+        const url = "http://deacosmus.dk/kea/10_eksamen/hjemmeside/wordpress/wp-json/wp/v2/pages/7";
+
+        // MANGLER FORKLARRING
+        async function start() {
+            //Vi har lavet en konstant som henter url'en ind.
+            const hentUrl = await fetch(url);
+
+            // Nedstående har vi lavet variablen 'indhold'. Denne bruger vi senere til at hente content ind fra overstående url (wordpress).
+            indhold = await hentUrl.json();
+
+            // Fører os videre til funktionen med samme navn.
+            visIndhold();
+
+            // For at tjekke om det virker: Det virker :)
+            //console.log("hej med dig Jytte");
+        }
 
 
+        function visIndhold() {
+            console.log("Funktionen visIndhold fungerer :)");
 
-    <script src=""></script>
-</body>
-</html>
+            //Vi går ind i innerHTML og henter content.rendered fra url'en.
+            document.querySelector("#forside_section").innerHTML = indhold.content.rendered;
+        }
+    </script>
+
+
+</body></html>
