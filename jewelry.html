@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+
+
+
+<body>
+
+    <template>
+        <article class="smykker_template">
+            <img class="billede" src="">
+            <h2 class="navn"></h2>
+            <p class="pris"></p>
+        </article>
+    </template>
+
+    <main>
+        <h1>Argentum collection</h1>
+        <section id="jewelry_section"></section>
+    </main>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+
+
+        // Variabel url er linket til siden.
+        const url = "http://deacosmus.dk/kea/10_eksamen/hjemmeside/wordpress/wp-json/wp/v2/smykker?per_page=100";
+
+        // Variablen skabelon, er templatens indhold.
+        const skabelon = document.querySelector("template").content;
+
+        // Variablen smykkeListe, er den section hvor indholdet fra pods skal indsættes i.
+        const smykkeListe = document.querySelector("jewelry_section");
+
+
+
+        async function start() {
+            console.log("start");
+            const hentUrl = await fetch(url);
+            indhold = await hentUrl.json();
+            visIndhold();
+
+        }
+
+        function visIndhold() {
+            console.log("visIndhold");
+
+            indhold.forEach(smykke => {
+                const klon = skabelon.cloneNode(true);
+                klon.querySelector(".billede").src = smykke.billede.guid;
+                klon.querySelector(".navn").textContent = smykke.navn;
+                klon.querySelector(".pris").textContent = smykke.pris;
+
+                jewelry_section.appendChild(klon);
+            })
+        }
+    </script>
+
+</body></html>
