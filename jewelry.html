@@ -9,9 +9,9 @@
 
 <body>
 
-
-
-
+<!--
+Hvis man skal skal have data ind fra pods, laver man en template hvori man laver plads til, at de forskellige informationer kan indsættes (via JavaScript)
+  -->
    <template>
         <article class="smykker">
             <img class="billede" src="">
@@ -20,9 +20,36 @@
         </article>
     </template>
 
+<!--
+   For at hente alt data ind, som er indsat på en side i wordpress, laves en section. Med JS vil man hente dataen fra wp og indsætte den i sektionen '#oversigt'.
+   -->
+    <main>
+        <h1>Argentum collection</h1>
+        <section id="oversigt"></section>
+    </main>
 
 
+    <script>
+        // Loader indhold
+        document.addEventListener("DOMContentLoaded", start);
 
-    <script src=""></script>
+        //
+        const url = "http://cilleabra.dk/kea/2_semester/tema_9/ihs/wordpress/wp-json/wp/v2/pages/30";
+
+
+        async function start() {
+            const hentUrl = await fetch(url);
+            indhold = await hentUrl.json();
+            visIndhold();
+        }
+
+        function visIndhold() {
+            console.log(visIndhold)
+            document.querySelector("#generelt_oversigt").innerHTML = indhold.content.rendered;
+
+        }
+    </script>
+
+
 </body>
 </html>
