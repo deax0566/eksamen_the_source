@@ -23,20 +23,23 @@
     </template>
 
     <main>
-        <h1>Argentum collection</h1>
-        <nav>
-            <section class="filter_knapper">
-                <a class="filter valgt" data-kategori="alle">All</a>
+        <section>
+            <h1>Argentum collection</h1>
+            <article class="filter_knapper">
+                <a class="filter valgt" data-kategori="alle">Alle</a>
                 <a class="filter" data-kategori="halskaeder">Necklaces</a>
                 <a class="filter" data-kategori="armbaand">Bracelets</a>
                 <a class="filter" data-kategori="oereringe">Earrings</a>
                 <a class="filter" data-kategori="ringe">Rings</a>
-            </section>
-        </nav>
+            </article>
+            <h3>Alle</h3>
+            <section id="list"></section>
+        </section>
+
+
+
         <section id="jewelry_section"></section>
     </main>
-
-
 
     <script>
         document.addEventListener("DOMContentLoaded", start);
@@ -51,6 +54,8 @@
         const smykkeListe = document.querySelector("jewelry_section");
 
         let indhold;
+        let filter = "alle";
+        let smykker;
 
         async function start() {
             console.log("start");
@@ -73,8 +78,63 @@
                     smykke.id;
 
                 jewelry_section.appendChild(klon);
+
             })
         }
+
+
+
+
+
+
+
+        //
+        //
+        //
+        //
+        //
+        //
+        //        function visSmykker() {
+        //            const templatePointer = document.querySelector("template");
+        //            const listPointer = document.querySelector("#list");
+        //            listPointer.innerHTML = ""; //html containeren tømmes og der tilgøjes nyt indhold
+        //
+        //            smykker.feed.entry.forEach(smykke => {
+        //                if (filter == "alle" || filter == smykke.categories) {
+        //                    console.log(smykke);
+        //
+        //                    const minKlon = templatePointer.cloneNode(true).content;
+        //
+        //
+        //                    listPointer.appendChild(minKlon);
+        //                }
+        //            })
+        //        }
+        //
+        //        //vi adder en click funktion alle med classen filter. Som kalder funktionen filterBTn's.
+        //
+        //        function addEventListenersToButtons() {
+        //            document.querySelectorAll(".filter").forEach((btn) => {
+        //                btn.addEventListener("click", filterBTNs);
+        //            });
+        //        }
+        //
+        //
+        //        // Denne funktion udskriver indholdet på siden. Alt efter hvilken knap der trykkes på, vil indholdet i h3 ændre sig til det valgte.
+        //
+        //        function filterBTNs() {
+        //            filter = this.dataset.kategori;
+        //            document.querySelector("h3").textContent = this.textContent;
+        //
+        //            document.querySelectorAll(".filter").forEach((btn) => {
+        //                btn.classList.remove("valgt");
+        //            })
+        //            this.classList.add("valgt");
+        //            visSmykker();
+        //        }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
