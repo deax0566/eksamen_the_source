@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+
+
+
+<body>
+
+    <main>
+        <section id="jewelry_section">
+            <article class="smykker_template">
+                <section id="box1">
+                    <img class="billede" src="">
+                </section>
+                <section id="box2">
+                    <h1 class="navn"></h1>
+                    <p class="varenr"></p>
+                    <p class="pris"></p>
+                    <a class="link" href="">Add to cart</a>
+                </section>
+            </article>
+        </section>
+    </main>
+
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+        console.log(id);
+        let smykker;
+
+        const url = "http://deacosmus.dk/kea/10_eksamen/hjemmeside/wordpress/wp-json/wp/v2/smykker?per_page=100";
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+        async function start() {
+            console.log("start");
+            const hentUrl = await fetch(url);
+            indhold = await hentUrl.json();
+            visIndhold();
+        }
+
+
+        function visIndhold() {
+            console.log("visIndhold");
+
+            indhold.forEach(smykke => {
+                if (id == smykke.id) {
+                    document.querySelector(".navn").textContent = smykke.navn;
+                }
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>
