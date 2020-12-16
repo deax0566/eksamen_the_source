@@ -14,82 +14,297 @@
 <body>
 
     <main>
-        <h1>Contact</h1>
-        <section id="contact_section"></section>
+
     </main>
-    <div class="container">
-        <form action="action_page.php">
 
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <header>Contact Us</header>
 
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <form id="form" class="topBefore">
 
-            <label for="country">Country</label>
-            <select id="country" name="country">
-                <option value="australia">Danmark</option>
-                <option value="canada">EU</option>
-                <option value="usa">Outside of EU</option>
-            </select>
+        <input id="name" type="text" placeholder="NAME">
+        <input id="email" type="text" placeholder="E-MAIL">
+        <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
+        <input id="submit" type="submit" value="GO!">
 
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    </form>
 
-            <input type="submit" value="Submit">
 
-        </form>
-    </div>
 
+    <footer>
+        <div class="foot-column">
+            <p>The Source<br>Tel: +45 60 56 66 70<br>thesourcecph@gmail.com</p>
+            <p>Find us here</p>
+            <div class="foot-so-me">
+                <img src="img/facebook-computer-icons-logo-facebook-icon-6c7c62bdf8b1031cc1887831ce79d408.png" alt="facebook">
+                <img src="img/computer-icons-logo-facebook-email-whatsapp-address-phone-instagram-ic-bf4214eeb4b383f4176b09e0c0975d92.png" alt="instagram">
+            </div>
+        </div>
+        <div class="foot-column">
+            <a href="index.html">
+                <img src="img/Artboard%201.svg" alt="logo for the source" class="footer_logo">
+            </a>
+        </div>
+        <div class="foot-column">
+
+            <a href="care_guide.html">
+                <p>Careguide</p>
+            </a>
+
+
+            <a href="retailers.html">
+                <p>Retailers</p>
+            </a>
+
+
+            <a href="terms.html">
+                <p>Terms and Conditions</p>
+            </a>
+        </div>
+
+
+
+    </footer>
 
 
     <style>
-        /* Style inputs with type="text", select elements and textareas */
-        input[type=text],
-        select,
-        textarea {
+        /*//////******Contact Formular****/
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
             width: 100%;
-            /* Full width */
-            padding: 12px;
-            /* Some padding */
-            border: 1px solid #ccc;
-            /* Gray border */
-            border-radius: 4px;
-            /* Rounded borders */
-            box-sizing: border-box;
-            /* Make sure that padding and width stays in place */
-            margin-top: 6px;
-            /* Add a top margin */
-            margin-bottom: 16px;
-            /* Bottom margin */
-            resize: vertical
-                /* Allow the user to vertically resize the textarea (not horizontally) */
         }
 
-        /* Style the submit button with a specific background color etc */
-        input[type=submit] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
+        input::placeholder,
+        textarea::placeholder {
+            color: #aca49c;
+            font-size: 0.875em;
+        }
+
+        input::placeholder,
+        textarea:focus::placeholder {
+            color: #bbb5af;
+        }
+
+
+        input:focus:placeholder,
+        textarea:focus::placeholder {
+            color: #bbb5af;
+        }
+
+
+        input:focus::placeholder,
+        textarea:focus::placeholder {
+            color: #bbb5af;
+        }
+
+        /* on hover placeholder */
+
+        input:hover::placeholder,
+        textarea:hover::-webkit-input-placeholder {
+            color: #e2dedb;
+            font-size: 0.875em;
+        }
+
+        input:hover:focus::placeholder,
+        textarea:hover:focus:placeholder {
+            color: #cbc6c1;
+        }
+
+        input:hover::placeholder,
+        textarea:hover::placeholder {
+            color: #e2dedb;
+            font-size: 0.875em;
+        }
+
+        input:hover:focus::placeholder,
+        textarea:hover:focus::placeholder {
+            color: #cbc6c1;
+        }
+
+        input:hover::placeholder,
+        textarea:hover::placeholder {
+            color: #e2dedb;
+            font-size: 0.875em;
+        }
+
+        input:hover:focus::placeholder,
+        textarea:hover:focus::placeholder {
+            color: #cbc6c1;
+        }
+
+        input:hover::placeholder,
+        textarea:hover::placeholder {
+            color: #e2dedb;
+            font-size: 0.875em;
+        }
+
+        input:hover:focus::placeholder,
+        textarea:hover::focus:placeholder {
+            color: #cbc6c1;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: white;
+            color: #b3aca7;
+        }
+
+        header {
+            position: relative;
+            margin: 100px 0 25px 0;
+            font-size: 2.3em;
+            text-align: center;
+            letter-spacing: 7px;
+        }
+
+        #form {
+            position: relative;
+            width: 500px;
+            margin: 50px auto 100px auto;
+        }
+
+        input {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.875em;
+            width: 470px;
+            height: 50px;
+            padding: 0px 15px 0px 15px;
+
+            background: transparent;
+            outline: none;
+            color: #726659;
+
+            border: solid 1px #b3aca7;
+            border-bottom: none;
+
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+        }
+
+        input:hover {
+            background: #b3aca7;
+            color: #e2dedb;
+        }
+
+        textarea {
+            width: 470px;
+            max-width: 470px;
+            height: 110px;
+            max-height: 110px;
+            padding: 15px;
+
+            background: transparent;
+            outline: none;
+
+            color: #726659;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.875em;
+
+            border: solid 1px #b3aca7;
+
+            transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+        }
+
+        textarea:hover {
+            background: #b3aca7;
+            color: #e2dedb;
+        }
+
+        #submit {
+            width: 502px;
+
+            padding: 0;
+            margin: -5px 0px 0px 0px;
+
+            font-family: 'Lato', sans-serif;
+            font-size: 0.875em;
+            color: #b3aca7;
+
+            outline: none;
             cursor: pointer;
+
+            border: solid 1px #b3aca7;
+            border-top: none;
         }
 
-        /* When moving the mouse over the submit button, add a darker green color */
-        input[type=submit]:hover {
-            background-color: #45a049;
+        #submit:hover {
+            color: #e2dedb;
         }
 
-        /* Add a background color and some padding around the form */
-        .container {
-            border-radius: 5px;
-            background-color: #f2f2f2;
+        /*_MEDIA QUERIES_*/
+        @media only screen and (max-width: 900px) {
+
+            #input,
+            #textarea {
+                margin: -20px auto 40px auto;
+                padding: 5px;
+            }
+
+            #form {
+                padding: 5px;
+            }
+
+            #textarea {
+
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+        }
+
+
+        /*//////////Footer//////////*/
+
+        footer {
+            height: auto;
+            width: 100vw;
+            background-color: floralwhite;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+        }
+
+        footer .foot-column {
+            flex-shrink: 1;
+            flex-basis: 190px;
             padding: 20px;
+            font-family:
+                color: black;
+            font-size: 1rem;
+        }
+
+        .footer_logo {
+            width: 175px;
+        }
+
+        footer img {
+            width: 30px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            color: #b3aca7;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        @media only screen and (max-width: 650px) {
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
-
-
 
 
     <script>
@@ -107,6 +322,10 @@
             console.log("Funktionen visIndhold fungerer :)");
 
             document.querySelector("#contact_section").innerHTML = indhold.content.rendered;
+        }
+
+        function addClass() {
+            document.body.classList.add("sent");
         }
     </script>
 
