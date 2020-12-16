@@ -1,0 +1,132 @@
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** GENERELT - START *******/
+
+
+* {
+    margin: 0;
+    max-width: 1400px;
+}
+
+
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*** GENERELT - SLUT *********
+******************************
+******************************
+******************************
+******************************
+**** FLEX-BOX ***************/
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.parent_forside {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.parent:nth-child(1),
+.parent:nth-child(3) {
+    flex-wrap: wrap-reverse;
+}
+
+.parent_forside:nth-child(2) {
+    flex-wrap: wrap-reverse;
+}
+
+
+
+
+
+
+/*** FLEX-BOX - SLUT *********
+******************************
+******************************
+******************************
+******************************
+**** FONTE - START **********/
+
+/*Fonte & margin+padding*/
+
+
+p {
+    padding: 10px 20px 40px;
+}
+
+h2,
+h3 {
+    padding: 20px 20px 0;
+}
+
+h1 {
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** FORSIDE - START *********/
+
+
+
+
+/********** GRID ************/
+
+.instagram {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+        "oeverst_venstre oeverst_hoejre"
+        "nederst_venstre nederst_hoejre";
+    grid-template-rows: 1fr;
+    padding: 0 20px;
+}
+
+.box1 {
+    grid-area: oeverst_venstre;
+}
+
+.box2 {
+    grid-area: oeverst_hoejre;
+}
+
+.box3 {
+    grid-area: nederst_venstre;
+}
+
+.box4 {
+    grid-area: nederst_hoejre;
+}
+
+/*** FORSIDE - SLUT **********
+******************************
+******************************
+******************************
+******************************
+*****************************/
