@@ -10,7 +10,6 @@
 
 
 
-
 <body>
 
     <template>
@@ -26,16 +25,15 @@
         <section>
             <h1>Argentum collection</h1>
             <article class="filter_knapper">
-                <a class="filter valgt" data-kategori="alle">Alle</a>
-                <a class="filter" data-kategori="halskaeder">Necklaces</a>
-                <a class="filter" data-kategori="armbaand">Bracelets</a>
-                <a class="filter" data-kategori="oereringe">Earrings</a>
-                <a class="filter" data-kategori="ringe">Rings</a>
+                <button class="filter valgt" data-kategori="alle">Alle</button>
+                <button class="filter" data-kategori="halskaeder">Necklaces</button>
+                <button class="filter" data-kategori="armbaand">Bracelets</button>
+                <button class="filter" data-kategori="oereringe">Earrings</button>
+                <button class="filter" data-kategori="ringe">Rings</button>
             </article>
-            <h3>Alle</h3>
+
             <section id="list"></section>
         </section>
-
 
 
         <section id="jewelry_section"></section>
@@ -52,10 +50,10 @@
 
         // Variablen smykkeListe, er den section hvor indholdet fra pods skal indsættes i.
         const smykkeListe = document.querySelector("jewelry_section");
-
         let indhold;
         let filter = "alle";
         let smykker;
+
 
         async function start() {
             console.log("start");
@@ -64,77 +62,55 @@
             visIndhold();
         }
 
-
         function visIndhold() {
             console.log("visIndhold");
-
             indhold.forEach(smykke => {
-
                 const klon = skabelon.cloneNode(true);
-                klon.querySelector(".billede").src = smykke.billede.guid;
-                klon.querySelector(".navn").textContent = smykke.navn;
-                klon.querySelector(".pris").textContent = smykke.pris;
-                klon.querySelector(".link").href = "singleview.html?id=" +
-                    smykke.id;
-
-                jewelry_section.appendChild(klon);
-
+                if (filter === "alle") {
+                    console.log("indlæs et smykke");
+                    klon.querySelector(".billede").src = smykke.billede.guid;
+                    klon.querySelector(".navn").textContent = smykke.navn;
+                    klon.querySelector(".pris").textContent = smykke.pris;
+                    klon.querySelector(".link").href = "singleview.html?id=" +
+                        smykke.id;
+                    console.log(smykke.kat);
+                    jewelry_section.appendChild(klon);
+                } else {
+                    if (filter === smykke.kat) {
+                        console.log("indsæt alle smykker med kat = Halskaede");
+                        klon.querySelector(".billede").src = smykke.billede.guid;
+                        klon.querySelector(".navn").textContent = smykke.navn;
+                        klon.querySelector(".pris").textContent = smykke.pris;
+                        klon.querySelector(".link").href = "singleview.html?id=" +
+                            smykke.id;
+                        jewelry_section.appendChild(klon);
+                    }
+                }
             })
+            addEventListenersToButtons();
         }
-
-
-
-
-
-
-
-        //
-        //
-        //
-        //
-        //
-        //
-        //        function visSmykker() {
-        //            const templatePointer = document.querySelector("template");
-        //            const listPointer = document.querySelector("#list");
-        //            listPointer.innerHTML = ""; //html containeren tømmes og der tilgøjes nyt indhold
-        //
-        //            smykker.feed.entry.forEach(smykke => {
-        //                if (filter == "alle" || filter == smykke.categories) {
-        //                    console.log(smykke);
-        //
-        //                    const minKlon = templatePointer.cloneNode(true).content;
-        //
-        //
-        //                    listPointer.appendChild(minKlon);
-        //                }
-        //            })
-        //        }
-        //
-        //        //vi adder en click funktion alle med classen filter. Som kalder funktionen filterBTn's.
-        //
-        //        function addEventListenersToButtons() {
-        //            document.querySelectorAll(".filter").forEach((btn) => {
-        //                btn.addEventListener("click", filterBTNs);
-        //            });
-        //        }
-        //
-        //
-        //        // Denne funktion udskriver indholdet på siden. Alt efter hvilken knap der trykkes på, vil indholdet i h3 ændre sig til det valgte.
-        //
-        //        function filterBTNs() {
-        //            filter = this.dataset.kategori;
-        //            document.querySelector("h3").textContent = this.textContent;
-        //
-        //            document.querySelectorAll(".filter").forEach((btn) => {
-        //                btn.classList.remove("valgt");
-        //            })
-        //            this.classList.add("valgt");
-        //            visSmykker();
-        //        }
-
+        //vi adder en click funktion alle med classen filter. Som kalder funktionen filterButtons
+        function addEventListenersToButtons() {
+            console.log("knapper aktiveret");
+            document.querySelectorAll(".filter").forEach((button) => {
+                button.addEventListener("click", filterButtons);
+            });
+        }
+        // Denne funktion udskriver indholdet på siden. Alt efter hvilken knap der trykkes på, vil indholdet i h3 ændre sig til det valgte.
+        function filterButtons() {
+            console.log("filter button pushed")
+            console.log(filter);
+            // filter = this.dataset.kategori;   -----------    det field som hedder kat i wordpress skal matche disse muligheder
+            filter = "Halskaede";
+            console.log(filter);
+            document.querySelectorAll(".filter").forEach((button) => {
+                button.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            console.log(this);
+            document.getElementById("jewelry_section").innerHTML = "";
+            visIndhold();
+        }
     </script>
 
-</body>
-
-</html>
+</body></html>
