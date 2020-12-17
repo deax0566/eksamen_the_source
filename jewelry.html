@@ -107,30 +107,6 @@
 
                     smykkeListe.appendChild(klon);
                 }
-
-
-
-
-                //                if (filter === "alle") {
-                //                    console.log("indlæs et smykke");
-                //                    klon.querySelector(".billede").src = smykke.billede.guid;
-                //                    klon.querySelector(".navn").textContent = smykke.navn;
-                //                    klon.querySelector(".pris").textContent = smykke.pris;
-                //                    klon.querySelector(".link").href = "singleview.html?id=" +
-                //                        smykke.id;
-                //                    console.log(smykke.kat);
-                //                    jewelry_section.appendChild(klon);
-                //                } else {
-                //                    if (filter === smykke.kat) {
-                //                        console.log("indsæt alle smykker med kat = Halskaede");
-                //                        klon.querySelector(".billede").src = smykke.billede.guid;
-                //                        klon.querySelector(".navn").textContent = smykke.navn;
-                //                        klon.querySelector(".pris").textContent = smykke.pris;
-                //                        klon.querySelector(".link").href = "singleview.html?id=" +
-                //                            smykke.id;
-                //                        jewelry_section.appendChild(klon);
-                //                    }
-                //                }
             })
             addEventlistenersToButtons();
         }
@@ -147,30 +123,6 @@
             console.log(filter);
             visIndhold();
         }
-
-
-        //        //vi adder en click funktion alle med classen filter. Som kalder funktionen filterButtons
-        // function addEventListenersToButtons() {
-        // console.log("knapper aktiveret");
-        // document.querySelectorAll(".filter").forEach((button) => {
-        // button.addEventListener("click", filterButtons);
-        // });
-        // }
-        // // Denne funktion udskriver indholdet på siden. Alt efter hvilken knap der trykkes på, vil indholdet i h3 ændre sig til det valgte.
-        // function filterButtons() {
-        // console.log("filter button pushed")
-        // console.log(filter);
-        // // filter = this.dataset.kategori; ----------- det field som hedder kat i wordpress skal matche disse muligheder
-        // filter = "Halskaede";
-        // console.log(filter);
-        // document.querySelectorAll(".filter").forEach((button) => {
-        // button.classList.remove("valgt");
-        // })
-        // this.classList.add("valgt");
-        // console.log(this);
-        // document.getElementById("jewelry_section").innerHTML = "";
-        // visIndhold();
-        // }
     </script>
 
 </body></html>
