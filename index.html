@@ -12,9 +12,161 @@
 
     <!-- Her skal indholdet sættes ind -->
     <main>
-        <section id="forside_section"></section>
-    </main>
+        <section class="css_splash">
+            <div class="css_splash_video_container">
+                <video class="css_splash_video" autoplay muted loop>
+                    <source src="video/SoMe.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="css_backgroundcolor">
+            </div>
 
+            <a href="#forside_section">
+                <img class="splash-arrow a-up-down overlay" src="img/pil.svg" alt="arrow">
+            </a>
+
+
+        </section>
+
+
+
+        <br>
+        <section id="forside_section"></section>
+
+
+
+
+    </main>
+    <style>
+        /*****Arrow*****/
+
+        .css_splash_video {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+
+        }
+
+        .css_splash_video_container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+        .a-up-down {
+            animation: k-up-down 1s infinite alternate;
+
+        }
+
+        .overlay {
+            position: absolute;
+            top: 90vh;
+            left: 90vh;
+            width: 10%;
+            height: 10%;
+        }
+
+        .overlay img {
+            position: absolute;
+            left: 50vh;
+            ;
+            top: 0;
+            width: 10%;
+            height: 10%;
+            object-fit: cover;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes k-up-down {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+
+        /***********Video********/
+        @media (min-width: 700px) {
+            .index header {
+                transform: translateY(-90px);
+            }
+        }
+
+        .css_splash {
+            position: relative;
+
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .css_splash .usp-slider {
+            display: none;
+        }
+
+
+        .splash-logo {
+            max-width: 140px;
+            margin-bottom: 1.5rem;
+        }
+
+        .css_splash_video_container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .css_splash_video {
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+
+        .css_backgroundcolor {
+            padding: 4rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (min-width: 480px) {
+
+            .splash-logo {
+                max-width: 180px;
+
+            }
+        }
+
+        @media (min-width: 700px) {
+
+            .splash-logo {
+                max-width: 240px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .splash-logo {
+                margin-bottom: 6rem;
+                max-width: 360px;
+            }
+        }
+    </style>
 
     <script>
         // Loader side
