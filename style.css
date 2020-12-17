@@ -4,7 +4,10 @@
     margin: 0;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> eksamen_the_source/dea
 body {
     justify-content: center;
 }
@@ -18,6 +21,10 @@ main {
     max-width: 1400px;
     margin: 0 auto;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> eksamen_the_source/dea
 
 
 /******************************
@@ -25,7 +32,6 @@ main {
 .parent {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 40px;
 }
 
 .parent_forside {
@@ -45,6 +51,38 @@ main {
 
 .child_billede img {
     display: none;
+<<<<<<< HEAD
+=======
+}
+
+.child {
+    flex-basis: 100px;
+    flex-grow: 1;
+}
+
+
+
+
+
+
+/*** FLEX-BOX - SLUT *********
+******************************
+******************************
+******************************
+******************************
+**** FONTE - START **********/
+
+/*Fonte & margin+padding*/
+
+
+p {
+    padding: 10px 20px 40px;
+}
+
+h2,
+h3 {
+    padding: 20px 20px 0;
+>>>>>>> eksamen_the_source/dea
 }
 
 .child {
@@ -82,6 +120,7 @@ main {
     background-color: #acb3b7;
 }
 
+<<<<<<< HEAD
 #forside .child_billede:nth-child(1) {
     background-image: url(img_video/forside_kroeller.jpg);
     background-size: cover;
@@ -92,6 +131,47 @@ main {
     background-size: cover;
 }
 
+=======
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** FORSIDE - START *********/
+
+#forside p:nth-child(1) {
+    padding: 0;
+}
+
+.splash {
+    height: 700px;
+    background-image: url(img_video/hej.jpg);
+}
+
+.child {
+    flex-basis: 100px;
+    flex-grow: 1;
+}
+
+.child:nth-child(2) {
+    background-color: #c9cdc8;
+}
+
+.child:nth-child(1) {
+    background-color: #acb3b7;
+}
+
+#forside .child_billede:nth-child(1) {
+    background-image: url(img_video/forside_kroeller.jpg);
+    background-size: cover;
+}
+
+#forside .child_billede:nth-child(2) {
+    background-image: url(img_video/amal.jpg);
+    background-size: cover;
+}
+
+>>>>>>> eksamen_the_source/dea
 #forside .child_billede {
     height: 400px;
     width: 100vw;
@@ -126,6 +206,10 @@ main {
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> eksamen_the_source/dea
 /*** FORSIDE - SLUT **********
 ******************************
 ******************************
