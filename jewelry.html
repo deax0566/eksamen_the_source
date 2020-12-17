@@ -41,7 +41,7 @@
 
 
 
-<body>
+<body id="jewelry_body">
 
     <template>
         <article class="smykker_template">
@@ -77,11 +77,11 @@
         // Variablen skabelon, er templatens indhold.
         const skabelon = document.querySelector("template").content;
         // Variablen smykkeListe, er den section hvor indholdet fra pods skal indsættes i.
-        const smykkeListe = document.querySelector("jewelry_section");
+        const smykkeListe = document.querySelector("#jewelry_section");
         let indhold;
         let filter = "alle";
         let smykker;
-        addEventListenersToButtons();
+
 
 
         async function start() {
@@ -93,10 +93,11 @@
 
 
         function visIndhold() {
-            console.log("visIndhold");
+            console.log(filter);
+            smykkeListe.innerHTML = "";
             indhold.forEach(smykke => {
                 const klon = skabelon.cloneNode(true);
-                if (filter == "alle" || filter == smykke.categories) {
+                if (filter == "alle" || filter == smykke.kategori) {
                     console.log("indlæs et smykke");
                     klon.querySelector(".billede").src = smykke.billede.guid;
                     klon.querySelector(".navn").textContent = smykke.navn;
@@ -104,7 +105,7 @@
                     klon.querySelector(".link").href = "singleview.html?id=" +
                         smykke.id;
 
-                    jewelry_section.appendChild(klon);
+                    smykkeListe.appendChild(klon);
                 }
 
 
@@ -131,7 +132,7 @@
                 //                    }
                 //                }
             })
-            addEventListenersToButtons();
+            addEventlistenersToButtons();
         }
 
 
@@ -140,12 +141,13 @@
                 button.addEventListener("click", filterBTNs);
             });
         }
-
+        // Her tager vi fat i knapperne.
         function filterBTNs() {
-            filter = this.dataset.categories;
-            vis();
+            filter = this.dataset.kategori;
+            console.log(filter);
+            visIndhold();
         }
-        hentdata(fil);
+
 
         //        //vi adder en click funktion alle med classen filter. Som kalder funktionen filterButtons
         // function addEventListenersToButtons() {
