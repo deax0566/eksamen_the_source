@@ -8,14 +8,20 @@
 
 * {
     margin: 0;
-    max-width: 1400px;
 }
 
-
+body {
+    justify-content: center;
+}
 
 img {
     width: 100%;
     height: 100%;
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 
@@ -29,13 +35,11 @@ img {
 .parent {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 40px;
 }
 
 .parent_forside {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 40px;
 }
 
 .parent:nth-child(1),
@@ -43,8 +47,18 @@ img {
     flex-wrap: wrap-reverse;
 }
 
-.parent_forside:nth-child(2) {
+.parent_forside:nth-child(3) {
     flex-wrap: wrap-reverse;
+}
+
+
+.child_billede img {
+    display: none;
+}
+
+.child {
+    flex-basis: 100px;
+    flex-grow: 1;
 }
 
 
@@ -93,8 +107,42 @@ h1 {
 ******************************
 **** FORSIDE - START *********/
 
+#forside p:nth-child(1) {
+    padding: 0;
+}
 
+.splash {
+    height: 700px;
+    background-image: url(img_video/hej.jpg);
+}
 
+.child {
+    flex-basis: 100px;
+    flex-grow: 1;
+}
+
+.child:nth-child(2) {
+    background-color: #c9cdc8;
+}
+
+.child:nth-child(1) {
+    background-color: #acb3b7;
+}
+
+#forside .child_billede:nth-child(1) {
+    background-image: url(img_video/forside_kroeller.jpg);
+    background-size: cover;
+}
+
+#forside .child_billede:nth-child(2) {
+    background-image: url(img_video/amal.jpg);
+    background-size: cover;
+}
+
+#forside .child_billede {
+    height: 400px;
+    width: 100vw;
+}
 
 /********** GRID ************/
 
@@ -105,7 +153,7 @@ h1 {
         "oeverst_venstre oeverst_hoejre"
         "nederst_venstre nederst_hoejre";
     grid-template-rows: 1fr;
-    padding: 0 20px;
+    padding: 40px 20px;
 }
 
 .box1 {
@@ -124,9 +172,74 @@ h1 {
     grid-area: nederst_hoejre;
 }
 
+
+
 /*** FORSIDE - SLUT **********
 ******************************
 ******************************
 ******************************
 ******************************
 *****************************/
+
+@media (min-width:1000px) {
+
+    .parent:nth-child(1),
+    .parent:nth-child(3) {
+        flex-wrap: wrap;
+    }
+
+    .parent_forside:nth-child(2) {
+        flex-wrap: wrap;
+    }
+
+
+    #forside .child_billede {
+        flex-basis: 100px;
+        flex-grow: 1;
+        height: 700px
+    }
+}
+
+@media (min-width:600px) {
+
+    .parent:nth-child(1),
+    .parent:nth-child(3) {
+        flex-wrap: wrap;
+    }
+
+    .parent_forside:nth-child(2) {
+        flex-wrap: wrap;
+    }
+
+
+    #forside .child_billede {
+        flex-basis: 100px;
+        flex-grow: 1;
+        height: 700px
+    }
+
+    .instagram {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas:
+            "venstre midt_v midt_h hoejre";
+        grid-template-rows: 1fr;
+        padding: 120px 20px 20px;
+    }
+
+    .box1 {
+        grid-area: venstre;
+    }
+
+    .box2 {
+        grid-area: midt_v;
+    }
+
+    .box3 {
+        grid-area: midt_h;
+    }
+
+    .box4 {
+        grid-area: hoejre;
+    }
+}
