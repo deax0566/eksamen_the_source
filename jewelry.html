@@ -18,6 +18,44 @@
             padding: 0 40px;
         }
 
+
+
+        .filter_knapper {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 20vw 20px;
+        }
+
+        .filter {
+            flex-basis: 800px;
+            flex-grow: 1;
+            background-color: white;
+            border: 1px solid black;
+            justify-content: center;
+            padding: 8px;
+            font-family: roboto;
+            margin: 5px;
+
+        }
+
+
+
+        @media(min-width: 600px) {
+            .filter_knapper {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 20vw 20px;
+            }
+
+            .filter {
+                flex-basis: 100px;
+                flex-grow: 1;
+                max-width: 20vw;
+            }
+        }
+
+
+
         @media(min-width: 700px) {
             #jewelry_section {
                 height: 100vh;
@@ -39,6 +77,35 @@
                 margin-left: -11px;
             }
 
+        }
+
+
+
+        .link {
+            text-decoration: none;
+            font-family: roboto;
+            text-decoration-color: black;
+            border: 3px solid black;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .link,
+        a,
+        a:visited,
+        a:hover,
+        a:active {
+            color: inherit;
+        }
+
+        .smykker_template {
+            margin-bottom: 40px;
+        }
+
+        .pris {
+            margin-bottom: 30px;
+        }
+
     </style>
 </head>
 
@@ -52,7 +119,7 @@
             <img class="billede" src="">
             <h2 class="navn"></h2>
             <p class="pris"></p>
-            <a class="link" href="">Se produkt</a>
+            <a class="link" href="">Add to cart</a>
         </article>
     </template>
 
