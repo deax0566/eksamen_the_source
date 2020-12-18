@@ -1,7 +1,7 @@
 /******************************************
 To Do:
 - Margin og padding på alle sider.
-- wrap-reverse på abpout siden.
+- wrap-reverse på about siden.
 ******************************************/
 
 
@@ -25,6 +25,74 @@ main {
     margin: 0 auto;
 }
 
+
+/*************************/
+/**** MARGIN & PADDING ***/
+/*************************/
+
+/****** Boxe *************/
+
+.parent {
+    padding-bottom: 40px;
+}
+
+.child,
+.child_forside {
+    padding: 50px 20px;
+}
+
+/****** Fonte ***********/
+
+h1 {
+    padding: 60px 0 40px;
+}
+
+h2 {
+    padding-bottom: 15px;
+}
+
+/****** Individuelt *****/
+/*FORSIDE*/
+
+.instagram {
+    padding: 40px 20px;
+}
+
+/*ABOUT*/
+/*
+#about .child{
+    padding: 0;
+}
+
+#about .child:nth-child(1) {
+    padding-right: 20px;
+}
+
+#about .child:nth-child(2) {
+    padding-left: 20px;
+}
+
+#about h4 {
+    padding: 40px 0 20px;
+}
+
+#retail {
+    padding: 40px;
+}
+
+#retailers_section h2,
+h3,
+p {
+    padding: 12px;
+    margin-left: -11px;
+}
+
+#terms h2:nth-child(1) {
+    padding: 0 0 20px;
+}
+*/
+
+
 /*** GENERELT - SLUT *********
 ******************************
 ******************************
@@ -43,21 +111,18 @@ h1 {
     text-transform: uppercase;
     font-size: 3rem;
     text-align: center;
-    padding: 40px 0;
 }
 
 h2 {
     font-family: montserrat;
     text-transform: uppercase;
     font-size: 2rem;
-    padding-bottom: 20px;
 }
 
 h3 {
     font-family: montserrat;
     text-transform: uppercase;
     font-size: 1.5rem;
-
 }
 
 h4 {
@@ -95,36 +160,56 @@ p {
 ******************************
 **** FLEX-BOX - START *******/
 
+.parent_forside,
 .parent {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 40px;
 }
 
-
-.parent_forside {
-    display: flex;
-    flex-wrap: wrap;
+.child {
+    flex-grow: 1;
+    flex-basis: 800px;
 }
 
 .parent:nth-child(1),
 .parent:nth-child(3) {
     flex-wrap: wrap-reverse;
-
 }
 
 .parent_forside:nth-child(1) {
     flex-wrap: wrap-reverse;
 }
 
+@media (min-width: 600px) {
+    .parent {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-.child_billede img {
-    display: none;
-}
+    .child {
+        flex-basis: 100px;
+        flex-grow: 1;
+    }
 
-.child {
-    flex-basis: 100px;
-    flex-grow: 1;
+    .parent:nth-child(1),
+    .parent:nth-child(3) {
+        flex-wrap: wrap;
+    }
+
+    .parent_forside:nth-child(2) {
+        flex-wrap: wrap;
+    }
+
+    .child {
+        flex-basis: 100px;
+        flex-grow: 1;
+    }
+
+    #forside .child_billede {
+        flex-basis: 100px;
+        flex-grow: 1;
+        height: 700px
+    }
 }
 
 
@@ -301,11 +386,9 @@ p {
 ******************************
 **** FORSIDE - START ********/
 
-#forside p:nth-child(1) {
-    padding: 0;
-}
 
-.child {
+
+#forside .child {
     flex-basis: 100px;
     flex-grow: 1;
 }
@@ -333,6 +416,13 @@ p {
     background-color: #acb3b7;
 }
 
+.child_billede img {
+    display: none;
+}
+
+
+
+
 /********** GRID ************/
 
 .instagram {
@@ -342,7 +432,6 @@ p {
         "oeverst_venstre oeverst_hoejre"
         "nederst_venstre nederst_hoejre";
     grid-template-rows: 1fr;
-    padding: 40px 20px;
 }
 
 .box1 {
@@ -385,17 +474,6 @@ p {
 ******************************
 **** ABOUT - START **********/
 
-#about .parent {
-    padding: 40px 40px;
-}
-
-#about .child:nth-child(1) {
-    padding-right: 20px;
-}
-
-#about .child:nth-child(2) {
-    padding-left: 20px;
-}
 
 #about .parent:nth-child(1) {
     background-color: antiquewhite;
@@ -405,9 +483,6 @@ p {
     background-color: beige;
 }
 
-#about h4 {
-    padding: 40px 0 20px;
-}
 
 /*** ABOUT - SLUT ************
 ******************************
@@ -424,6 +499,44 @@ p {
 
 
 
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** RETAILERS - START *******/
+
+
+/*** RETAILERS - SLUT ********
+******************************
+******************************
+******************************
+******************************
+*****************************/
+
+
+
+
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** RETAILERS - START *******/
+
+
+
+
+
+/*** ABOUT - SLUT ************
+******************************
+******************************
+******************************
+******************************
+*****************************/
+
+
+
 
 
 
@@ -432,28 +545,10 @@ p {
 
 @media (min-width:600px) {
 
-    .parent {
-        display: flex;
-        flex-wrap: wrap;
-    }
 
-    .parent:nth-child(1),
-    .parent:nth-child(3) {
-        flex-wrap: wrap;
-    }
-
-    .parent_forside:nth-child(2) {
-        flex-wrap: wrap;
-    }
-
-    .child {
-        flex-basis: 100px;
-        flex-grow: 1;
-    }
 
     #forside .child_billede {
-        flex-basis: 100px;
-        flex-grow: 1;
+
         height: 700px
     }
 
