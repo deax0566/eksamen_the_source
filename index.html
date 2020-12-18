@@ -17,15 +17,15 @@
         <section class="css_splash">
 
             <section class="css_splash_video_container">
-                <video class="css_splash_video" autoplay muted loop>
-                    <source src="video/SoMe.mp4" type="video/mp4">
+                <video class="css_splash_video video" autoplay muted loop>
+                    <source src="video/lilletekst.mp4" type="video/mp4">
                 </video>
+                <section class="forside_txt">
+                    <img src="img/hvidtlogo.svg">
+                </section>
             </section>
-            <!--
 
-            <section class="css_backgroundcolor">
-            </section>
--->
+
 
             <a href="#forside_section">
                 <img class="splash-arrow a-up-down overlay" src="img/pil.svg" alt="arrow">
@@ -35,6 +35,35 @@
         <section id="forside_section"></section>
 
 
+        <style>
+            .forside_txt {
+                position: absolute;
+                left: 0px;
+                top: 50vh;
+
+
+            }
+
+            .video {
+                display: none;
+            }
+
+            .css_splash {
+                background-image: url(img/baggrundsbilledeforside.gif);
+                background-size: cover;
+            }
+
+            @media (min-width: 700px) {
+                .video {
+                    display: block;
+
+                }
+
+                .forside_txt {
+                    display: none;
+                }
+            }
+        </style>
 
 
     </main>
@@ -69,10 +98,7 @@
             //Vi går ind i innerHTML og henter content.rendered fra url'en.
             document.querySelector("#forside_section").innerHTML = indhold.content.rendered;
         }
-
     </script>
 
 
-</body>
-
-</html>
+</body></html>
