@@ -1,3 +1,10 @@
+/******************************************
+To Do:
+- Margin og padding på alle sider.
+- wrap-reverse på abpout siden.
+******************************************/
+
+
 /*****************************
 ******************************
 ******************************
@@ -71,7 +78,26 @@ p {
 ******************************
 **** FLEX-BOX - START *******/
 
+
+
+
+
+
+
+
+
+
+
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** FLEX-BOX - START *******/
+
 .parent {
+    display: flex;
+    flex-wrap: wrap;
     padding-bottom: 40px;
 }
 
@@ -84,9 +110,10 @@ p {
 .parent:nth-child(1),
 .parent:nth-child(3) {
     flex-wrap: wrap-reverse;
+
 }
 
-.parent_forside:nth-child(3) {
+.parent_forside:nth-child(1) {
     flex-wrap: wrap-reverse;
 }
 
@@ -101,11 +128,6 @@ p {
 }
 
 
-
-
-
-
-
 /*** FLEX-BOX - SLUT *********
 ******************************
 ******************************
@@ -114,11 +136,13 @@ p {
 *****************************/
 
 
-/*
 
-Alt css står i index.html
 
-*/
+
+
+
+
+
 
 
 /*****************************
@@ -128,12 +152,130 @@ Alt css står i index.html
 ******************************
 **** SPLASH - START **********/
 
+/***********************************/
+/**** placering af splash video ****/
+
+.css_splash {
+    height: 95vh;
+    /*position: relative;*/
+}
+
+@media (min-width: 600px) {
+    .css_splash {
+        max-height: 100vh;
+    }
+}
+
+.css_splash_video_container {
+    /*position: absolute;*/
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.css_splash_video {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*.css_splash_video {
+            /*position: relative;*/
+/*padding-bottom: 56.25%;*/
+/*padding-top: 30px;*/
+/*height: 0;
+        }*/
 
 
 
+/***********************************/
+/******** placering af spil ********/
+
+.overlay {
+    position: absolute;
+    top: 80vh;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+}
+
+/*.overlay img {
+            /*position: absolute;*/
+/*left: 50vh;*/
+/*top: 0;*/
+/*width: 10%;
+            height: 10%;*/
+/*pointer-events: none;
+        }*/
 
 
+/* Animationen på pil */
+.a-up-down {
+    animation: k-up-down 1s infinite alternate;
+}
 
+@keyframes k-up-down {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+
+/**** web ****/
+
+
+/*.css_splash .usp-slider {
+            display: none;
+        }*/
+
+
+/*.splash-logo {
+            max-width: 140px;
+            margin-bottom: 1.5rem;
+        }*/
+
+
+/*.css_backgroundcolor {
+            padding: 4rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }*/
+
+/*
+        @media (min-width: 480px) {
+
+        .splash-logo {
+        max-width: 180px;
+
+        }
+        }
+
+        @media (min-width: 700px) {
+
+        .splash-logo {
+        max-width: 240px;
+        }
+        }
+
+        @media (min-width: 1200px) {
+        .splash-logo {
+        margin-bottom: 6rem;
+        max-width: 360px;
+        }
+        }
 
 
 /*** SPLASH - SLUT ***********
