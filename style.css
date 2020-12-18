@@ -112,6 +112,7 @@ h2 {
 .instagram {
     padding: 40px 20px;
 }
+
 /*
 
 #terms h2:nth-child(1) {
@@ -452,8 +453,8 @@ nav li:last-child {
 
 .overlay {
     position: absolute;
-    top: 80vh;
-    left: 45%;
+    top: 88vh;
+    left: 42%;
     width: 10%;
     height: 10%;
 }
