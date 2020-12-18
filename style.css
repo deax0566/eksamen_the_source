@@ -58,53 +58,27 @@ h2 {
     padding: 40px 20px;
 }
 
-/*ABOUT*/
-/*
-#about .child{
-    padding: 0;
-}
-
-#about .child:nth-child(1) {
-    padding-right: 20px;
-}
-
-#about .child:nth-child(2) {
-    padding-left: 20px;
-}
-
-#about h4 {
-    padding: 40px 0 20px;
-}
-
-#retail {
-    padding: 40px;
-}
-
-#retailers_section h2,
-h3,
-p {
-    padding: 12px;
-    margin-left: -11px;
-}
-
-#terms h2:nth-child(1) {
-    padding: 0 0 20px;
-}
-*/
-
-
 /*** GENERELT - SLUT *********
 ******************************
 ******************************
 ******************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ******************************
 **** FONTE - START ***********/
-
-/* LINK TIL FONTE */
-/*
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Padauk&display=swap" rel="stylesheet">
-*/
 
 h1 {
     font-family: montserrat;
@@ -142,6 +116,132 @@ p {
 ******************************
 ******************************
 **** FLEX-BOX - START *******/
+
+
+
+
+
+
+
+/*****************************
+******************************
+**** HEADER - START ***ØØ****/
+
+header {
+    background-color: #F5E8D7;
+    padding: 12px 0px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: #643939;
+    padding: 0px 12px;
+    /*font-family: pt serif;*/
+    font-family: roboto;
+    line-height: 60px;
+}
+
+header a:hover {
+    color: #D69F82;
+}
+
+#menu {
+    max-width: 1200px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+    transform: translateX(-100%);
+}
+
+
+/********* burger *********/
+
+
+#burgermenu {
+/*    display: inline-block;*/
+    max-width: 1200px;
+    margin: 5px 10px;
+}
+
+#burgermenu img {
+    height: 25px;
+}
+
+nav {
+    /*    position: absolute;*/
+    align-items: center;
+    z-index: 100;
+    background-color: #F5E8D7;
+    opacity: 85%;
+    width: 100vw;
+}
+
+nav li:first-child {
+    padding-top: 20px;
+}
+
+nav li:last-child {
+    padding-bottom: 20px;
+}
+
+
+/********* mediaquery *********/
+
+@media (min-width: 1110px) {
+    #burgermenu {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    nav {
+        position: static;
+        background-color: #F5E8D7;
+        opacity: 100%;
+        width: 100%;
+    }
+
+    nav li:first-child {
+        padding-top: 0;
+    }
+
+    nav li:last-child {
+        padding-bottom: 0;
+    }
+
+    header a {
+        font-size: 1em;
+        line-height: normal;
+    }
+}
+
+
+/*** HEADER - SLUT ***********
+******************************
+*****************************/
+
+
+
+
+
+
+
+
 
 
 
