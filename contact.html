@@ -16,21 +16,36 @@
 <body>
 
     <main>
+        <section id="intro">
+            <h1></h1>
+            <p></p>
+        </section>
+        <section id="info">
+            <div id="formular">
+                <h2>Contact Us</h2>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Your company">
+                <input type="text" placeholder="Write Us An Message" style="height: 100px;">
+                <button>Send</button>
+            </div>
+            <div id="sidebar">
+                <h2>Contact Us</h2>
+                <div class="contact_info">
 
+                    <p>Copenhagen, Denmark</p>
+                </div>
+                <div class="contact_info">
+
+                    <p>Tel: +45 60 56 66 70</p>
+                </div>
+                <div class="contact_info">
+
+                    <p>thesourcecph@gmail.com</p>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <header>Contact Us</header>
-
-    <form id="form" class="topBefore">
-
-        <input id="name" type="text" placeholder="NAME">
-        <input id="email" type="text" placeholder="E-MAIL">
-        <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
-        <input id="submit" type="submit" value="GO!">
-
-    </form>
-
-
 
     <footer>
         <div class="foot-column">
@@ -70,192 +85,104 @@
 
     <style>
         /*//////******Contact Formular****/
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #aca49c;
-            font-size: 0.875em;
-        }
-
-        input::placeholder,
-        textarea:focus::placeholder {
-            color: #bbb5af;
-        }
 
 
-        input:focus:placeholder,
-        textarea:focus::placeholder {
-            color: #bbb5af;
-        }
-
-
-        input:focus::placeholder,
-        textarea:focus::placeholder {
-            color: #bbb5af;
-        }
-
-        /* on hover placeholder */
-
-        input:hover::placeholder,
-        textarea:hover::-webkit-input-placeholder {
-            color: #e2dedb;
-            font-size: 0.875em;
-        }
-
-        input:hover:focus::placeholder,
-        textarea:hover:focus:placeholder {
-            color: #cbc6c1;
-        }
-
-        input:hover::placeholder,
-        textarea:hover::placeholder {
-            color: #e2dedb;
-            font-size: 0.875em;
-        }
-
-        input:hover:focus::placeholder,
-        textarea:hover:focus::placeholder {
-            color: #cbc6c1;
-        }
-
-        input:hover::placeholder,
-        textarea:hover::placeholder {
-            color: #e2dedb;
-            font-size: 0.875em;
-        }
-
-        input:hover:focus::placeholder,
-        textarea:hover:focus::placeholder {
-            color: #cbc6c1;
-        }
-
-        input:hover::placeholder,
-        textarea:hover::placeholder {
-            color: #e2dedb;
-            font-size: 0.875em;
-        }
-
-        input:hover:focus::placeholder,
-        textarea:hover::focus:placeholder {
-            color: #cbc6c1;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background: white;
-            color: #b3aca7;
-        }
-
-        header {
-            position: relative;
-            margin: 100px 0 25px 0;
-            font-size: 2.3em;
+        h1 {
+            padding-bottom: 0%;
             text-align: center;
-            letter-spacing: 7px;
-        }
-
-        #form {
+            font-size: 3rem;
+            padding-top: 20px;
+            z-index: 1;
             position: relative;
-            width: 300x;
-            margin: 60px auto 100px auto;
-
         }
 
-        input {
-            font-family: 'Lato', sans-serif;
-            font-size: 0.875em;
-            width: 340px;
-            height: 50px;
-            padding: 0px 15px 0px 15px;
-
-            background: transparent;
-            outline: none;
-            color: #726659;
-
-            border: solid 1px #b3aca7;
-            border-bottom: none;
-
-            transition: all 0.3s ease-in-out;
-            -webkit-transition: all 0.3s ease-in-out;
-            -moz-transition: all 0.3s ease-in-out;
-            -ms-transition: all 0.3s ease-in-out;
+        #info {
+            box-shadow: 0 0 5px #838383;
+            display: flex;
+            flex-direction: row;
+            margin: 40px auto 40px auto;
+            width: 80vw;
+            z-index: 1;
+            position: relative;
+            flex-wrap: wrap;
         }
 
-        input:hover {
-            background: #b3aca7;
-            color: #e2dedb;
+
+        #formular {
+            padding: 20px;
+            background-color: white;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            flex-basis: 350px;
+            flex-grow: 3;
         }
 
-        textarea {
-            width: 340px;
-            height: 110px;
-            padding: 15px;
-
-            background: transparent;
-            outline: none;
-
-            color: #726659;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.875em;
-
-            border: solid 1px #b3aca7;
-
-            transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
-            -moz-transition: all 0.3s ease-in-out;
-            -ms-transition: all 0.3s ease-in-out;
+        #formular input {
+            width: 100%;
+            color: #9d9d9d;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: 0 2px 3px #d1d1d1;
         }
 
-        textarea:hover {
-            background: #b3aca7;
-            color: #e2dedb;
+        #formular p {
+            font-size: 0.8rem;
+            padding: 10px;
         }
 
-        #submit {
-            width: 370px;
-
-            padding: 0;
-            margin: -5px 0px 0px 0px;
-
-            font-family: 'Lato', sans-serif;
-            font-size: 0.875em;
-            color: #b3aca7;
-
-            outline: none;
+        #formular button {
+            background-color: var(--footer);
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            font-family: var(--text-font);
             cursor: pointer;
-
-            border: solid 1px #b3aca7;
-            border-top: none;
         }
 
-        #submit:hover {
-            color: #e2dedb;
+        #sidebar {
+            padding: 20px;
+            background-color: var(--light-brown);
+            width: 40%;
+            flex-basis: 200px;
+            flex-grow: 2;
         }
+
+        .contact_info {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 20px 0;
+        }
+
+        .contact_info p {
+            margin: auto 1px;
+
+        }
+
 
         /*_MEDIA QUERIES_*/
-        @media(min-width: 700px) {
 
-            #input,
-            #textarea {
-                margin: -20px auto 40px auto;
-                padding: 5px;
+
+        @media only screen and (max-width: 440px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media only screen and (max-width: 360px) {
+            h2 {
+                font-size: 1rem;
             }
 
-            #form {
-                padding: 5px;
-            }
-
-            #textarea {
-
-                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            #info {
+                margin-top: 10px;
             }
         }
 
