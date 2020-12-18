@@ -20,14 +20,27 @@
 <body id="terms">
 
     <header>
-        <section id="header">
+        <section id="header" class="parent_header">
 
-            <section class="header_logo">
+            <!-- For at lave en plads til burgermenuen -->
+            <section class="child_header fyld"></section>
 
+            <!-- <section class="child_header" id="header_logo_first">
+                <img class="logo_img" src="img_video/logo_sort.svg" alt="logo_sort">
+            </section> -->
 
-                <div id="burgermenu">
+            <section class="child_header" id="header_logo_midten">
+                <img class="logo_img" src="img_video/logo_sort.svg" alt="logo_sort">
+            </section>
+
+            <section class="child_header" id="kurv">
+                <img class="kurv" src="img_video/kurv.svg">
+            </section>
+
+            <section class="child_header">
+                <section id="burgermenu">
                     <img src="img_video/burger.svg" alt="burger">
-                </div>
+                </section>
 
                 <nav>
                     <ul id="menu" class="hidden">
@@ -49,6 +62,7 @@
                     </ul>
                 </nav>
             </section>
+
         </section>
     </header>
 
@@ -76,10 +90,7 @@
 
             document.querySelector("#terms_section").innerHTML = indhold.content.rendered;
         }
-
     </script>
     <script src="script.js"></script>
 
-</body>
-
-</html>
+</body></html>
