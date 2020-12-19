@@ -592,6 +592,13 @@ nav li:last-child {
 ******************************
 **** FORSIDE - START ********/
 
+#forside header {
+    background-color: white;
+}
+
+#forside #menu {
+    background-color: white;
+}
 
 #forside .child {
     flex-basis: 100px;
