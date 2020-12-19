@@ -18,7 +18,7 @@
 
             <section class="css_splash_video_container">
                 <video class="css_splash_video video" autoplay muted loop>
-                    <source src="video/lilletekst.mp4" type="video/mp4">
+                    <source src="video/faerdig_forside.mp4" type="video/mp4">
                 </video>
                 <section class="forside_txt">
                     <img src="img/hvidtlogo.svg">
@@ -66,11 +66,60 @@
                     display: none;
                 }
             }
+
+
+            /*Footer*/
+
+            footer {
+                height: auto;
+                width: 100%;
+                background-color: floralwhite;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+            }
+
+            footer .foot-column {
+                flex-shrink: 1;
+                flex-basis: 190px;
+                padding: 20px;
+                font-family:
+                    color: black;
+                font-size: 1rem;
+            }
+
+            .footer_logo {
+                width: 300px;
+            }
+
+            footer img {
+                width: 30px;
+            }
+
+            a {
+                color: black;
+                text-decoration: none;
+                color: #b3aca7;
+            }
+
+            a:hover {
+                color: black;
+            }
+
+            @media only screen and (max-width: 650px) {
+                footer {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
         </style>
 
 
-    </main>
 
+
+    </main>
 
     <script>
         // Loader side
@@ -101,7 +150,44 @@
             //Vi går ind i innerHTML og henter content.rendered fra url'en.
             document.querySelector("#forside_section").innerHTML = indhold.content.rendered;
         }
+
     </script>
 
+    <footer>
+        <div class="foot-column">
+            <p>The Source<br>Tel: +45 60 56 66 70<br>thesourcecph@gmail.com</p>
+            <p>Find us here</p>
+            <div class="foot-so-me">
+                <img src="img/facebook-computer-icons-logo-facebook-icon-6c7c62bdf8b1031cc1887831ce79d408.png" alt="facebook">
+                <img src="img/computer-icons-logo-facebook-email-whatsapp-address-phone-instagram-ic-bf4214eeb4b383f4176b09e0c0975d92.png" alt="instagram">
+            </div>
+        </div>
+        <div class="foot-column">
+            <a href="index.html">
+                <img src="img/Artboard%201.svg" alt="logo for the source" class="footer_logo">
+            </a>
+        </div>
+        <div class="foot-column">
 
-</body></html>
+            <a href="care_guide.html">
+                <p>Careguide</p>
+            </a>
+
+
+            <a href="retailers.html">
+                <p>Retailers</p>
+            </a>
+
+
+            <a href="terms.html">
+                <p>Terms and Conditions</p>
+            </a>
+        </div>
+
+
+
+    </footer>
+
+</body>
+
+</html>
