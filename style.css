@@ -1,10 +1,10 @@
 /******************************************
 To Do:
-- Pil og logo på forsiden.
-- Instagram ikon og navn på forside
-- Blog siden mobil og web
-- Knapper på forsiden
-- Padding på contact
+- header - få logo og shop ud i siderne.
+- farver + hover m.m. på header
+- link farver
+- Insta tag
+
 - Fjern padding/margin på jewelry
 - Lidt mindre font jewelry
 - padding på singleview
@@ -22,7 +22,7 @@ To Do:
 ******************************
 **** GENERELT - START ********/
 * {
-    margin: 0;
+    margin: 0 auto;
 }
 
 img {
@@ -110,7 +110,7 @@ p {
 /****** Fonte ***********/
 
 h1 {
-    padding: 40px 20px 20px;
+    margin: 30px;
     display: flex;
     text-align: left;
 }
@@ -125,11 +125,9 @@ h2 {
     padding: 40px 20px;
 }
 
-
 #terms .child:nth-child(1) {
     padding-top: 0;
 }
-
 
 #about .parent:nth-child(1) .child:nth-child(1),
 #about .parent:nth-child(3) .child:nth-child(1),
@@ -183,6 +181,10 @@ h2 {
 ******************************
 **** HEADER - START ***ØØ****/
 #header_logo_first {
+    display: none;
+}
+
+#kurv_web {
     display: none;
 }
 
@@ -292,6 +294,33 @@ nav li:last-child {
 }
 
 @media (min-width: 1100px) {
+    .fyld {
+        display: none;
+    }
+
+    #header {
+        max-width: 1400px;
+        display: flex;
+        align-items: center;
+    }
+
+    #header_logo_midten {
+        display: flex;
+    }
+
+    #kurv {
+        display: none;
+    }
+
+    #kurv_web {
+        display: flex;
+    }
+
+
+    .forside_parent {
+        display: flex;
+        justify-content: flex-end;
+    }
 
     #burgermenu {
         display: none;
@@ -305,6 +334,7 @@ nav li:last-child {
     #menu.hidden {
         transform: translateX(0);
         opacity: 1;
+        max-width: 400px;
     }
 
     nav {
@@ -394,11 +424,16 @@ nav li:last-child {
         flex-wrap: wrap;
     }
 
+
+}
+
+
+@media (min-width: 800px) {
     .parent_forside:nth-child(2) {
         flex-wrap: wrap;
     }
 
-    .child {
+    #forside .child {
         flex-basis: 100px;
         flex-grow: 1;
     }
@@ -409,7 +444,6 @@ nav li:last-child {
         max-height: 700px
     }
 }
-
 
 /*** FLEX-BOX - SLUT *********
 ******************************
@@ -443,6 +477,8 @@ nav li:last-child {
     /*position: relative;*/
 }
 
+
+
 @media (min-width: 600px) {
     .css_splash {
         max-height: 100vh;
@@ -466,18 +502,48 @@ nav li:last-child {
 }
 
 
+.video {
+    display: none;
+}
+
+.css_splash {
+    background-image: url(img/baggrundsbilledeforside.gif);
+    background-size: cover;
+}
+
+
+@media (min-width: 700px) {
+    .video {
+        display: block;
+
+    }
+
+    .forside_txt {
+        display: none;
+    }
+
+    .overlay {
+        top: 80vh;
+    }
+}
 
 /***********************************/
-/******** placering af spil ********/
+/**** placering af pil og logo *****/
 
 .overlay {
     position: absolute;
-    top: 80vh;
+    top: 85vh;
     left: 44%;
     width: 10%;
     height: 10%;
 }
 
+.forside_txt {
+    position: absolute;
+    left: 10vh;
+    top: 60vh;
+    width: 70%;
+}
 
 /* Animationen på pil */
 .a-up-down {
@@ -495,29 +561,19 @@ nav li:last-child {
 }
 
 
+
 /*** SPLASH - SLUT ***********
 ******************************
 ******************************
 ******************************
 ******************************
-*****************************/
-
-
-
-
-
-
-
-
-
-
-/*****************************
+******************************
+******************************
 ******************************
 ******************************
 ******************************
 ******************************
 **** FORSIDE - START ********/
-
 
 
 #forside .child {
@@ -528,6 +584,7 @@ nav li:last-child {
 #forside .child_billede:nth-child(1) {
     background-image: url(img_video/forside_kroeller.jpg);
     background-size: cover;
+    background-position: right;
 }
 
 #forside .child_billede:nth-child(2) {
@@ -582,19 +639,79 @@ nav li:last-child {
 
 /******** INSTA TAG *********/
 
-.insta_parent {
+#forside .wp-block-group__inner-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-
-    list-style-type: none;
 }
+
 
 .insta_child {
-    flex-basis: 800px;
-    flex-grow: 1;
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
 }
 
+.insta_child:nth-child(2) {
+    padding: 0 0 60px 20px;
+}
+
+.insta_child svg {
+    width: 26px;
+    height: 26px;
+}
+
+/***** KNAPPER *******/
+
+#forside .wp-block-button__link {
+    background-color: none;
+    border: 1px solid black;
+    justify-content: center;
+    padding: 10px;
+    font-family: roboto;
+}
+
+#forside .child p {
+    margin-bottom: 30px;
+}
+
+/* WEB VERSION */
+
+@media (min-width:600px) {
+
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #forside .child_billede {
+        height: 700px
+    }
+
+    .instagram {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas:
+            "venstre midt_v midt_h hoejre";
+        grid-template-rows: 1fr;
+        padding: 120px 20px 20px;
+    }
+
+    .box1 {
+        grid-area: venstre;
+    }
+
+    .box2 {
+        grid-area: midt_v;
+    }
+
+    .box3 {
+        grid-area: midt_h;
+    }
+
+    .box4 {
+        grid-area: hoejre;
+    }
+}
 
 /*** FORSIDE - SLUT **********
 ******************************
@@ -756,8 +873,18 @@ nav li:last-child {
 
 #blog li {
     display: block;
-
 }
+
+#blog ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0em;
+    margin-block-end: 4em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
 
 #blog img {
     max-width: 70vw;
@@ -812,20 +939,11 @@ nav li:last-child {
 }
 
 #blog h3 {
-    text-align: center;
+    text-align: left;
     font-size: 15px;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-#blog ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 0em;
-    margin-block-end: 4em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-}
 
 #blog_section {
     display: flex;
@@ -837,13 +955,12 @@ nav li:last-child {
     #blog_section {
         padding: 10px 10vw;
     }
-}
 
-@media (min-width: 1100px) {
-    #blog_section {
-        padding: 10px 0;
+    #blog h3 {
+        text-align: center;
     }
 }
+
 
 
 /**** BLOG - SLUT ************
@@ -852,6 +969,9 @@ nav li:last-child {
 ******************************
 ******************************
 *****************************/
+
+
+
 
 
 
@@ -910,62 +1030,182 @@ nav li:last-child {
 
 
 
+/*****************************
+******************************
+******************************
+******************************
+******************************
+****** CONTACT - SLUT *******/
+h1 {
+    padding-bottom: 0%;
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+#info {
+    box-shadow: 0 0 5px #838383;
+    display: flex;
+    flex-direction: row;
+    margin: 40px auto 40px auto;
+    width: 80vw;
+    z-index: 1;
+    position: relative;
+    flex-wrap: wrap;
+}
 
 
+#formular {
+    padding: 20px;
+    background-color: white;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 350px;
+    flex-grow: 3;
+}
+
+#formular input,
+#formular button {
+    width: 90%;
+    color: #9d9d9d;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 3px #d1d1d1;
+}
+
+#formular p {
+    font-size: 0.8rem;
+    padding: 10px;
+}
+
+#formular button {
+    background-color: var(--footer);
+    color: cadetblue;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-family: var(--text-font);
+    cursor: pointer;
+    width: 96%;
+}
+
+#sidebar {
+    padding: 20px;
+    background-color: var(--light-brown);
+    width: 40%;
+    flex-basis: 200px;
+    flex-grow: 2;
+}
+
+.contact_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
+
+.contact_info p {
+    margin: auto 1px;
+
+}
 
 
+/*_MEDIA QUERIES_*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* WEB VERSION */
-
-@media (min-width:600px) {
-
+@media only screen and (max-width: 440px) {
     h1 {
-        display: flex;
-        justify-content: center;
-    }
-
-    #forside .child_billede {
-
-        height: 700px
-    }
-
-    .instagram {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-areas:
-            "venstre midt_v midt_h hoejre";
-        grid-template-rows: 1fr;
-        padding: 120px 20px 20px;
-    }
-
-    .box1 {
-        grid-area: venstre;
-    }
-
-    .box2 {
-        grid-area: midt_v;
-    }
-
-    .box3 {
-        grid-area: midt_h;
-    }
-
-    .box4 {
-        grid-area: hoejre;
+        font-size: 2rem;
     }
 }
+
+@media only screen and (max-width: 360px) {
+    h2 {
+        font-size: 1rem;
+    }
+
+    #info {
+        margin-top: 10px;
+    }
+}
+
+
+/***** CONTACT - SLUT ********
+******************************
+******************************
+******************************
+******************************
+*****************************/
+
+
+
+
+
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** FOOTER - START *********/
+
+
+footer {
+    height: auto;
+    width: 100%;
+    background-color: floralwhite;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    max-width: 1400px;
+}
+
+footer .foot-column {
+    flex-shrink: 1;
+    flex-basis: 190px;
+    padding: 20px;
+    font-family:
+        color: black;
+    font-size: 1rem;
+}
+
+.footer_logo {
+    width: 300px;
+}
+
+footer img {
+    width: 30px;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+    color: #b3aca7;
+}
+
+a:hover {
+    color: black;
+}
+
+@media only screen and (max-width: 650px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/**** FOOTER - START *********
+******************************
+******************************
+******************************
+******************************
+*****************************/

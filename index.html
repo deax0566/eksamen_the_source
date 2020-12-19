@@ -35,123 +35,13 @@
         <section id="forside_section"></section>
 
 
-        <style>
-            .forside_txt {
-                position: absolute;
-                left: 10vh;
-                top: 60vh;
-                width: 70%;
 
-
-
-
-            }
-
-            .video {
-                display: none;
-            }
-
-            .css_splash {
-                background-image: url(img/baggrundsbilledeforside.gif);
-                background-size: cover;
-            }
-
-            @media (min-width: 700px) {
-                .video {
-                    display: block;
-
-                }
-
-                .forside_txt {
-                    display: none;
-                }
-            }
-
-
-            /*Footer*/
-
-            footer {
-                height: auto;
-                width: 100%;
-                background-color: floralwhite;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: space-around;
-            }
-
-            footer .foot-column {
-                flex-shrink: 1;
-                flex-basis: 190px;
-                padding: 20px;
-                font-family:
-                    color: black;
-                font-size: 1rem;
-            }
-
-            .footer_logo {
-                width: 300px;
-            }
-
-            footer img {
-                width: 30px;
-            }
-
-            a {
-                color: black;
-                text-decoration: none;
-                color: #b3aca7;
-            }
-
-            a:hover {
-                color: black;
-            }
-
-            @media only screen and (max-width: 650px) {
-                footer {
-                    flex-direction: column;
-                    align-items: center;
-                }
-            }
-
-        </style>
 
 
 
 
     </main>
 
-    <script>
-        // Loader side
-        document.addEventListener("DOMContentLoaded", start);
-
-        // Vi laver en konstant = url
-        const url = "http://deacosmus.dk/kea/10_eksamen/hjemmeside/wordpress/wp-json/wp/v2/pages/7";
-
-        // MANGLER FORKLARRING
-        async function start() {
-            //Vi har lavet en konstant som henter url'en ind.
-            const hentUrl = await fetch(url);
-
-            // Nedstående har vi lavet variablen 'indhold'. Denne bruger vi senere til at hente content ind fra overstående url (wordpress).
-            indhold = await hentUrl.json();
-
-            // Fører os videre til funktionen med samme navn.
-            visIndhold();
-
-            // For at tjekke om det virker: Det virker :)
-            //console.log("hej med dig Jytte");
-        }
-
-
-        function visIndhold() {
-            console.log("Funktionen visIndhold fungerer :)");
-
-            //Vi går ind i innerHTML og henter content.rendered fra url'en.
-            document.querySelector("#forside_section").innerHTML = indhold.content.rendered;
-        }
-
-    </script>
 
     <footer>
         <div class="foot-column">
@@ -183,11 +73,40 @@
                 <p>Terms and Conditions</p>
             </a>
         </div>
-
-
-
     </footer>
 
-</body>
+    <script>
+        // Loader side
+        document.addEventListener("DOMContentLoaded", start);
 
-</html>
+        // Vi laver en konstant = url
+        const url = "http://deacosmus.dk/kea/10_eksamen/hjemmeside/wordpress/wp-json/wp/v2/pages/7";
+
+        // MANGLER FORKLARRING
+        async function start() {
+            //Vi har lavet en konstant som henter url'en ind.
+            const hentUrl = await fetch(url);
+
+            // Nedstående har vi lavet variablen 'indhold'. Denne bruger vi senere til at hente content ind fra overstående url (wordpress).
+            indhold = await hentUrl.json();
+
+            // Fører os videre til funktionen med samme navn.
+            visIndhold();
+
+            // For at tjekke om det virker: Det virker :)
+            //console.log("hej med dig Jytte");
+        }
+
+
+        function visIndhold() {
+            console.log("Funktionen visIndhold fungerer :)");
+
+            //Vi går ind i innerHTML og henter content.rendered fra url'en.
+            document.querySelector("#forside_section").innerHTML = indhold.content.rendered;
+        }
+    </script>
+    <script src="script.js"></script>
+
+
+
+</body></html>
