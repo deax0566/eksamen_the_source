@@ -2,7 +2,16 @@
 To Do:
 - Pil og logo på forsiden.
 - Instagram ikon og navn på forside
--
+- Blog siden mobil og web
+- Knapper på forsiden
+- Padding på contact
+- Fjern padding/margin på jewelry
+- Lidt mindre font jewelry
+- padding på singleview
+- Retailers
+- About
+- Footer
+- Header
 ******************************************/
 
 
@@ -72,6 +81,8 @@ h4 {
 
 p {
     font-family: roboto;
+    font-size: 18.5px;
+    line-height: 1.6rem
 }
 
 
@@ -454,13 +465,6 @@ nav li:last-child {
     object-fit: cover;
 }
 
-/*.css_splash_video {
-            /*position: relative;*/
-/*padding-bottom: 56.25%;*/
-/*padding-top: 30px;*/
-/*height: 0;
-        }*/
-
 
 
 /***********************************/
@@ -468,7 +472,7 @@ nav li:last-child {
 
 .overlay {
     position: absolute;
-    top: 85vh;
+    top: 80vh;
     left: 44%;
     width: 10%;
     height: 10%;
@@ -633,103 +637,12 @@ nav li:last-child {
 *****************************/
 
 
-
-
-
-
-
-
-
 /*****************************
 ******************************
 ******************************
 ******************************
 ******************************
-**** RETAILERS - START *******/
-
-
-/*** RETAILERS - SLUT ********
-******************************
-******************************
-******************************
-******************************
-*****************************/
-
-
-
-
-/*****************************
-******************************
-******************************
-******************************
-******************************
-**** RETAILERS - START *******/
-
-
-
-
-
-/*** ABOUT - SLUT ************
-******************************
-******************************
-******************************
-******************************
-*****************************/
-
-
-
-
-
-
-
-/* WEB VERSION */
-
-@media (min-width:600px) {
-
-
-
-    #forside .child_billede {
-
-        height: 700px
-    }
-
-    .instagram {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-areas:
-            "venstre midt_v midt_h hoejre";
-        grid-template-rows: 1fr;
-        padding: 120px 20px 20px;
-    }
-
-    .box1 {
-        grid-area: venstre;
-    }
-
-    .box2 {
-        grid-area: midt_v;
-    }
-
-    .box3 {
-        grid-area: midt_h;
-    }
-
-    .box4 {
-        grid-area: hoejre;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
+**** JEWELRY - START ********/
 #jewelry .filter_knapper {
     display: flex;
     flex-wrap: wrap;
@@ -818,10 +731,137 @@ nav li:last-child {
 
 
 
+/*** JEWELRY - SLUT **********
+******************************
+******************************
+******************************
+******************************
+*****************************/
+
+
+
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** BLOG - START ***********/
+
+
+
+#blog img {
+    height: 35vh;
+}
+
+
+#blog li {
+    display: block;
+
+}
+
+#blog img {
+    max-width: 70vw;
+    margin: 30px 0 30px;
+}
+
+
+@media(min-width: 600px) {
+    #blog .blog_indhold {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+
+    }
+
+    #blog li {
+        display: block;
+
+
+    }
+
+    #blog img {
+        max-width: 70vh;
+        margin: 30px 0 30px;
+
+    }
+}
+
+
+#blog a {
+    text-decoration: none;
+    font-family: roboto;
+    text-decoration-color: black;
+    border: 2px solid black;
+    justify-content: center;
+    padding: 8px;
+}
+
+#blog,
+#blog a,
+#blog a:visited,
+#blog a:hover,
+#blog a:active {
+    color: inherit;
+}
+
+
+#blog .wp-block-latest-posts__post-excerpt {
+    margin-top: 20px;
+    font-family: roboto;
+}
+
+#blog h3 {
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+}
+
+#blog ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0em;
+    margin-block-end: 4em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
+#blog_section {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10vw;
+}
+
+@media (min-width: 600px) {
+    #blog_section {
+        padding: 10px 10vw;
+    }
+}
+
+@media (min-width: 1100px) {
+    #blog_section {
+        padding: 10px 0;
+    }
+}
+
+
+/**** BLOG - SLUT ************
+******************************
+******************************
+******************************
+******************************
+*****************************/
 
 
 
 
+/*****************************
+******************************
+******************************
+******************************
+******************************
+**** SINGLE VIEW - START ****/
 
 
 #single .link {
@@ -857,4 +897,75 @@ nav li:last-child {
 #single .varenummer,
 #single .pris {
     margin-bottom: 20px;
+}
+
+/*** SINGLE VIEW - SLUT ******
+******************************
+******************************
+******************************
+******************************
+*****************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* WEB VERSION */
+
+@media (min-width:600px) {
+
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #forside .child_billede {
+
+        height: 700px
+    }
+
+    .instagram {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas:
+            "venstre midt_v midt_h hoejre";
+        grid-template-rows: 1fr;
+        padding: 120px 20px 20px;
+    }
+
+    .box1 {
+        grid-area: venstre;
+    }
+
+    .box2 {
+        grid-area: midt_v;
+    }
+
+    .box3 {
+        grid-area: midt_h;
+    }
+
+    .box4 {
+        grid-area: hoejre;
+    }
 }
