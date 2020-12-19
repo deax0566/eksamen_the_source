@@ -762,13 +762,17 @@ nav li:last-child {
 ******************************
 ******************************
 **** JEWELRY - START ********/
-#jewelry .filter_knapper {
+#jewelry_body h2 {
+    font-size: 1.6rem;
+}
+
+#jewelry_body .filter_knapper {
     display: flex;
     flex-wrap: wrap;
     margin: 0 20vw 20px;
 }
 
-#jewelry .filter {
+#jewelry_body .filter {
     flex-basis: 800px;
     flex-grow: 1;
     background-color: white;
@@ -783,13 +787,13 @@ nav li:last-child {
 
 
 @media(min-width: 600px) {
-    #jewelry .filter_knapper {
+    #jewelry_body .filter_knapper {
         display: flex;
         flex-wrap: wrap;
         margin: 0 20vw 20px;
     }
 
-    #jewelry .filter {
+    #jewelry_body .filter {
         flex-basis: 100px;
         flex-grow: 1;
         max-width: 20vw;
@@ -823,7 +827,7 @@ nav li:last-child {
 
 
 
-#jewelry .link {
+#jewelry_body .link {
     text-decoration: none;
     font-family: roboto;
     text-decoration-color: black;
@@ -832,19 +836,19 @@ nav li:last-child {
     padding: 8px;
 }
 
-#jewelry.link,
-#jewelry a,
-#jewelry a:visited,
-#jewelry a:hover,
-#jewelry a:active {
+#jewelry_body .link,
+#jewelry_body a,
+#jewelry_body a:visited,
+#jewelry_body a:hover,
+#jewelry_body a:active {
     color: inherit;
 }
 
-#jewelry .smykker_template {
+#jewelry_body .smykker_template {
     margin-bottom: 40px;
 }
 
-#jewelry .pris {
+#jewelry_body .pris {
     margin-bottom: 30px;
 }
 
