@@ -17,12 +17,12 @@
 
     <main>
         <section id="intro">
-            <h1>Contact</h1>
+            <h1>Contact Form</h1>
             <p></p>
         </section>
         <section id="info">
             <div id="formular">
-                <h2>Contact Us</h2>
+                <h2>Contact Us Here</h2>
                 <input type="text" placeholder="Name">
                 <input type="text" placeholder="Email">
                 <input type="text" placeholder="Your company">
@@ -30,7 +30,7 @@
                 <button>Send</button>
             </div>
             <div id="sidebar">
-                <h2>Contact Us</h2>
+                <h2>Information</h2>
                 <div class="contact_info">
 
                     <p>Copenhagen, Denmark</p>
@@ -56,23 +56,22 @@
                 <img src="img/computer-icons-logo-facebook-email-whatsapp-address-phone-instagram-ic-bf4214eeb4b383f4176b09e0c0975d92.png" alt="instagram">
             </div>
         </div>
+
+
         <div class="foot-column">
             <a href="index.html">
                 <img src="img/Artboard%201.svg" alt="logo for the source" class="footer_logo">
             </a>
         </div>
+
         <div class="foot-column">
 
             <a href="care_guide.html">
                 <p>Careguide</p>
             </a>
-
-
             <a href="retailers.html">
                 <p>Retailers</p>
             </a>
-
-
             <a href="terms.html">
                 <p>Terms and Conditions</p>
             </a>
@@ -81,11 +80,7 @@
 
 
     </footer>
-
-
     <style>
-
-
         h1 {
             padding-bottom: 0%;
             text-align: center;
@@ -117,8 +112,9 @@
             flex-grow: 3;
         }
 
-        #formular input {
-            width: 100%;
+        #formular input,
+        #formular button {
+            width: 90%;
             color: #9d9d9d;
             border-radius: 5px;
             border: none;
@@ -134,7 +130,7 @@
 
         #formular button {
             background-color: var(--footer);
-            color: white;
+            color: cadetblue;
             border: none;
             padding: 10px;
             margin-top: 10px;
@@ -143,6 +139,7 @@
             border-radius: 5px;
             font-family: var(--text-font);
             cursor: pointer;
+            width: 96%;
         }
 
         #sidebar {
@@ -190,7 +187,7 @@
 
         footer {
             height: auto;
-            width: 100vw;
+            width: 100%;
             background-color: floralwhite;
             display: flex;
             flex-direction: row;
@@ -231,6 +228,7 @@
                 align-items: center;
             }
         }
+
     </style>
 
 
@@ -254,6 +252,9 @@
         function addClass() {
             document.body.classList.add("sent");
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
