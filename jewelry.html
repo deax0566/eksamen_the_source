@@ -14,9 +14,11 @@
 
 
 
-
 <body id="jewelry_body">
 
+
+
+    <!-- Dette er templaten som bliver udfyldt hver gang et smykke child bliver oprettet-->
     <template>
         <article class="smykker_template">
             <img class="billede" src="">
@@ -25,6 +27,8 @@
             <a class="link" href="">Add to cart</a>
         </article>
     </template>
+
+
 
     <header id="header_forside">
         <section id="header" class="parent_header">
@@ -76,6 +80,9 @@
     </header>
     <main>
         <section>
+
+            <!--           Her opretter vi knapper til hvert enkelt smykke kategori
+           Alle knapperne får tilføjet klassen "filter" og får tilknyttet en dataset værdi-->
             <h1>Argentum collection</h1>
             <article class="filter_knapper">
                 <button class="filter valgt" data-kategori="alle">Alle</button>
@@ -84,6 +91,7 @@
                 <button class="filter" data-kategori="oereringe">Earrings</button>
                 <button class="filter" data-kategori="ringe">Rings</button>
             </article>
+
 
             <section id="list"></section>
         </section>
@@ -126,29 +134,36 @@
     <script>
         document.addEventListener("DOMContentLoaded", start);
 
-        // Variabel url er linket til siden.
+        // Variabel url er linket til siden fra WordPress
         const url = "http://deacosmus.dk/kea/10_eksamen/hjemmeside/wordpress/wp-json/wp/v2/smykker?per_page=100";
-        // Variablen skabelon, er templatens indhold.
+        // Variablen "skabelon" referere op til vores HTML template
         const skabelon = document.querySelector("template").content;
-        // Variablen smykkeListe, er den section hvor indholdet fra pods skal indsættes i.
+        // Variablen smykkeListe, er den section hvor indholdet fra pods skal indsættes i
+
         const smykkeListe = document.querySelector("#jewelry_section");
         let indhold;
+        //Den er sat til at vise "alle" smykker når siden tilgås
         let filter = "alle";
         let smykker;
 
 
-
+        //Henter data ind fra json filen og gemmer informationerne i et array i variablen "indhold"
         async function start() {
             console.log("start");
             const hentUrl = await fetch(url);
             indhold = await hentUrl.json();
+
             visIndhold();
         }
 
 
         function visIndhold() {
             console.log(filter);
+            // Alle pods bliver fjernet
             smykkeListe.innerHTML = "";
+            // Array'et af indholdet fra json filen, looper igennem hvert element.
+            // Når filter er sat til alle, vil templaten blive udfyldt med hvert elements værdier, som svarer til billede, pris, navn og link - herefter bliver den udfyldte template indsat som et childelement under #jewelry_section
+            // Hvis filter ikke er "alle", så bliver hvert smykke element checket om deres kategori er tilsvarende til filter variablen og kun hvis de er ens, vil smykket blive tilføjet som et child til #jewelry_section
             indhold.forEach(smykke => {
                 const klon = skabelon.cloneNode(true);
                 if (filter == "alle" || filter == smykke.kategori) {
@@ -162,16 +177,19 @@
                     smykkeListe.appendChild(klon);
                 }
             })
+
             addEventlistenersToButtons();
         }
 
+        // Alle html elementer som indeholder klassen filter, får tilføjet en eventlistener
 
         function addEventlistenersToButtons() {
             document.querySelectorAll(".filter").forEach(button => {
                 button.addEventListener("click", filterBTNs);
             });
         }
-        // Her tager vi fat i knapperne.
+
+        // Her tager vi fat i dataset fra den knap der er blevet klikket på og sætter filter variablen = data.set.kategori fx. armbaand, oereringe osv.
         function filterBTNs() {
             filter = this.dataset.kategori;
             console.log(filter);
