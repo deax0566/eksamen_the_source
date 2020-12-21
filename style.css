@@ -531,6 +531,13 @@ about_parent {
     .css_splash {
         max-height: 100vh;
     }
+
+    .overlay {
+        left: 44%;
+        width: 8%;
+        height: 8%;
+    }
+
 }
 
 
@@ -587,17 +594,19 @@ about_parent {
 .overlay {
     position: absolute;
     top: 90vh;
-    left: 44%;
-    width: 10%;
-    height: 10%;
+    left: 46%;
+    width: 8%;
+    height: 8%;
 }
 
 .forside_txt {
     position: absolute;
-    left: 10vh;
-    top: 55vh;
+    left: 8.8vh;
+    top: 68vh;
     width: 70%;
 }
+
+
 
 /* Animationen på pil */
 .a-up-down {
@@ -933,11 +942,11 @@ about_parent {
     padding: 8px;
 }
 
-#jewelry_body .link,
-#jewelry_body a,
-#jewelry_body a:visited,
-#jewelry_body a:hover,
-#jewelry_body a:active {
+#jewelry_body .smykker_template .link,
+#jewelry_body .smykker_template a,
+#jewelry_body .smykker_template a:visited,
+#jewelry_body .smykker_template a:hover,
+#jewelry_body .smykker_template a:active {
     color: inherit;
 }
 
