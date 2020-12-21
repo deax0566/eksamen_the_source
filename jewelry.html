@@ -166,7 +166,7 @@
                     console.log("indlæs et smykke");
                     klon.querySelector(".billede").src = smykke.billede.guid;
                     klon.querySelector(".navn").textContent = smykke.navn;
-                    klon.querySelector(".pris").textContent = smykke.pris;
+                    klon.querySelector(".pris").textContent = smykke.pris + " DKK";
                     klon.querySelector(".link").href = "singleview.html?id=" +
                         smykke.id;
 
@@ -191,10 +191,7 @@
             console.log(filter);
             visIndhold();
         }
-
     </script>
     <script src="script.js"></script>
 
-</body>
-
-</html>
+</body></html>
