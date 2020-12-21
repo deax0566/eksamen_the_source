@@ -491,7 +491,7 @@ about_parent {
     #forside .child_billede {
         flex-basis: 100px;
         flex-grow: 1;
-        max-height: 700px
+
     }
 
     .about_parent {
@@ -983,12 +983,15 @@ about_parent {
     margin-bottom: 30px;
 }
 
-.smykke_template,
-.parent {
-    margin-top: 2vh;
-    margin-left: 28vh;
-    flex-direction: row;
-    flex-basis: 500px;
+
+#terms_section .delivery {
+    background-color: darkgray;
+    margin-bottom: 2vh;
+}
+
+#terms_section .return {
+    background-color: gray;
+    margin-bottom: 2vh;
 }
 
 /*** JEWELRY - SLUT **********
