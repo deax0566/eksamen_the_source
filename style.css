@@ -36,6 +36,18 @@ main {
 }
 
 
+html {
+    height: 100%;
+}
+
+#contact,
+#retail,
+#terms {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /*** GENERELT - SLUT *********
 ******************************
@@ -232,7 +244,7 @@ h2 {
 }
 
 header {
-    background-color: #faf3ea;
+    background-color: #ccc2bb;
     max-width: 1400px;
 }
 
@@ -250,7 +262,7 @@ header a {
 }
 
 header a:hover {
-    color: #cecece;
+    color: darkgray;
 }
 
 
@@ -260,9 +272,13 @@ header a:hover {
     list-style-type: none;
     padding: 0;
     position: absolute;
-    background-color: #faf3ea;
+    background-color: #ccc2bb;
     width: 100vw;
 
+}
+
+#menu a {
+    margin-left: 20px;
 }
 
 .hidden {
@@ -832,6 +848,7 @@ about_parent {
 ******************************
 ******************************
 **** JEWELRY - START ********/
+/*klassen smykke_template får en specifik strl*/
 .smykker_template {
     width: 300px;
     height: 300px;
@@ -839,20 +856,28 @@ about_parent {
     padding-bottom: 180px;
 }
 
+/*Her rammer specifikt klassen .smykke_template's child som får en padding*/
 .smykker_template:nth-child(1) {
     padding-top: 40px;
 }
 
+/*Alle h2'erne inde i body'en en strl på 1.6rem*/
 #jewelry_body h2 {
     font-size: 1.6rem;
 }
 
+/*Filterknapperne får noget luft*/
 #jewelry_body .filter_knapper {
     display: flex;
     flex-wrap: wrap;
     margin: 0 20vw 20px;
 }
 
+.filter_knapper button {
+    cursor: pointer;
+}
+
+/*Former knapperne så de får en border og ligner en knap*/
 #jewelry_body .filter {
     flex-basis: 800px;
     flex-grow: 1;
@@ -1251,7 +1276,7 @@ main #blog_section {
 footer {
     height: auto;
     width: 100vw;
-    background-color: #faf3ea;
+    background-color: #ccc2bb;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -1284,16 +1309,17 @@ footer img {
 footer a {
     color: black;
     text-decoration: none;
-    color: #b3aca7;
+    color: black;
 }
 
 a:hover {
-    color: black;
+    color: darkgray;
 }
 
 @media only screen and (min-width: 650px) {
     footer {
         flex-direction: row;
+        margin-top: auto;
     }
 }
 
