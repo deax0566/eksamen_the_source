@@ -42,7 +42,8 @@ html {
 
 #contact,
 #retail,
-#terms {
+#terms,
+#single {
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -256,7 +257,7 @@ header a {
     /*    text-transform: uppercase;*/
     color: black;
     padding: 0px 12px;
-    font-family: kannada mn;
+    font-family: roboto;
     line-height: 60px;
     font-weight: 200;
 }
@@ -755,7 +756,7 @@ about_parent {
 /***** KNAPPER *******/
 
 #forside .wp-block-button__link {
-    background-color: none;
+    background-color: transparent;
     border: 1px solid black;
     justify-content: center;
     padding: 10px;
@@ -852,7 +853,6 @@ about_parent {
 .smykker_template {
     width: 300px;
     height: 300px;
-    margin 0px 60px;
     padding-bottom: 180px;
 }
 
@@ -983,7 +983,13 @@ about_parent {
     margin-bottom: 30px;
 }
 
-
+.smykke_template,
+.parent {
+    margin-top: 2vh;
+    margin-left: 28vh;
+    flex-direction: row;
+    flex-basis: 500px;
+}
 
 /*** JEWELRY - SLUT **********
 ******************************
@@ -1015,11 +1021,11 @@ about_parent {
 #blog main ul {
     display: block;
     list-style-type: disc;
-    margin-block-start: 0em;
-    margin-block-end: 4em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
+    margin-top: 0em;
+    margin-bottom: 4em;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
 }
 
 
@@ -1293,8 +1299,7 @@ footer .foot-column {
     flex-shrink: 1;
     flex-basis: 190px;
     padding: 20px;
-    font-family:
-        color: black;
+    color: black;
     font-size: 1rem;
 }
 
