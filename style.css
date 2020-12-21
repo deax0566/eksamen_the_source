@@ -540,6 +540,7 @@ about_parent {
     left: 0;
     width: 100%;
     height: 100%;
+    display: none;
 }
 
 .css_splash_video {
@@ -555,7 +556,7 @@ about_parent {
 }
 
 .css_splash {
-    background-image: url(img/baggrundsbilledeforside.gif);
+    background-image: url(img_video/danne.jpg);
     background-size: cover;
 }
 
@@ -572,6 +573,10 @@ about_parent {
 
     .overlay {
         top: 80vh;
+    }
+
+    .css_splash_video_container {
+        display: block;
     }
 }
 
@@ -643,9 +648,14 @@ about_parent {
 }
 
 #forside .child_billede:nth-child(2) {
-    background-image: url(img_video/amal.jpg);
+    background-image: url(img_video/amal_forside.jpg);
     background-size: cover;
     background-position: center;
+}
+
+.parent_forside a {
+    text-decoration: none;
+    color: #2f2f2f;
 }
 
 #forside .child_billede {
@@ -654,11 +664,11 @@ about_parent {
 }
 
 #forside .child:nth-child(2) {
-    background-color: #c9cdc8;
+    background-color: #eef0ed;
 }
 
 #forside .child:nth-child(1) {
-    background-color: #acb3b7;
+    background-color: #caccc8;
 }
 
 .child_billede img {
