@@ -443,6 +443,12 @@ about_parent {
     flex-basis: 800px;
 }
 
+@media (min-width: 600px) {
+    .about_child {
+        flex-basis: 100px;
+    }
+}
+
 .parent:nth-child(1),
 .parent:nth-child(3) {
     flex-wrap: wrap-reverse;
